@@ -103,8 +103,6 @@ var menu_items_objects = {
       { name: 'Meal Wrapstar', image: 'sandwiches&wraps/Meal-Wrapstar.jpg', price: 5700 },
       { name: 'Wrapstar', image: 'sandwiches&wraps/Wrapstar.jpg', price: 3500 },
     ],
-    // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
-    // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
   },
 };
 
@@ -120,7 +118,6 @@ meal_name.addEventListener("click", () => {
 });
 
 function show_menu(c) {
-  // alert(c);
   let item_container = document.getElementsByClassName("container")[0];
   item_container.innerHTML = c.trim();
 }
@@ -137,7 +134,6 @@ right_button.addEventListener("click", () => {
   if (!(menu_items_list_index > menu_items_list.length - 2)) {
     menu_items_list_index += 1;
     meal_name.innerHTML = `<p>${menu_items_list[menu_items_list_index]}</p>`;
-    // alert("About checking item");
     check_menu_item(menu_items_list[menu_items_list_index]);
   }
 });
