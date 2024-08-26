@@ -80,17 +80,17 @@ var menu_items_objects = {
   sandwiches_wraps: {
     chickwizz: [
       { name: 'Regular', image: 'sandwiches&wraps/Chickwhizz.jpg', price: 2600 },
+      { name: 'Spicy', image: 'sandwiches&wraps/Spicy-Chickwhizz.jpg', price: 2600 },
       { name: 'Regular Meal M', image: 'sandwiches&wraps/Meal-Chickwhizz.jpg', price: 5000 },
       { name: 'Regular Meal L', image: 'sandwiches&wraps/Meal-Chickwhizz.jpg', price: 5500 },
       { name: 'Double', image: 'sandwiches&wraps/Double-Chickwhizz.jpg', price: 3100 },
-      { name: 'Double Spicy ', image: 'sandwiches&wraps/Double-Spicy-Chickwhizz.png', price: 3100 },
       { name: 'Double Meal M', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 5500 },
       { name: 'Double Meal L', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 6000 },
+      { name: 'Double Spicy ', image: 'sandwiches&wraps/Double-Spicy-Chickwhizz.png', price: 3100 },
       { name: 'Double Spicy Meal M', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 5500 },
       { name: 'Double Spicy Meal L', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 6000 },
       { name: 'Spicy Meal M', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 5000 },
       { name: 'Spicy Meal L', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 5500 },
-      { name: 'Spicy', image: 'sandwiches&wraps/Spicy-Chickwhizz.jpg', price: 2600 },
       
     ],
     burger: [
