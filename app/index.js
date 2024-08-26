@@ -2,7 +2,7 @@ var left_button = document.getElementById("left_button");
 var right_button = document.getElementById("right_button");
 var meal_name = document.getElementsByClassName("meal_name")[0];
 var menu_items_list_index = 0;
-var menu_items_list = ["Meals","Chicken","Sides","Dessert & Drinks",];
+var menu_items_list = ["Meals","Chicken","Sides","Dessert & Drinks", "Sandwiches & Wraps"];
 
 var menu_items_objects = {
   meals: [
@@ -57,6 +57,29 @@ var menu_items_objects = {
 
   sides: [{ name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 }],
   dessert_drinks: [{ name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 }],
+  sandwiches_wraps: {
+    chickwizz: [
+      { name: 'Regular', image: 'sandwiches&wraps/Chickwhizz.jpg', price: 3200 },
+      { name: 'Double', image: 'sandwiches&wraps/Double-Chickwhizz.jpg', price: 3200 },
+      { name: 'Double Spicy ', image: 'sandwiches&wraps/Double-Spicy-Chickwhizz.png', price: 3200 },
+      { name: 'Double Meal', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 3200 },
+      { name: 'Double Spicy Meal', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 3200 },
+      { name: 'Spicy Meal', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 3200 },
+      { name: 'Spicy', image: 'sandwiches&wraps/Spicy-Chickwhizz.jpg', price: 3200 },
+      
+    ],
+    burger: [
+      { name: 'Chef Burger', image: 'sandwiches&wraps/ChefBurger.jpg', price: 3200 },
+      { name: 'Chef Burger Meal', image: 'sandwiches&wraps/Meal-ChefBurger.jpg', price: 3200 },
+      { name: 'Big Boyz Meal', image: 'sandwiches&wraps/Meal-BigBoyz.jpg', price: 3200 },
+    ],
+    wrap: [
+      { name: 'Meal Wrapstar', image: 'sandwiches&wraps/Meal-Wrapstar.jpg', price: 3200 },
+      { name: 'Wrapstar', image: 'sandwiches&wraps/Wrapstar.jpg', price: 3200 },
+    ],
+    // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
+    // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
+  },
 };
 
 // alert(`src="images/${menu_items_objects.meals[0].image}.jpg"`);
@@ -113,12 +136,24 @@ function check_menu_item(item){
     ${create_item(menu_items_objects.chicken.rotisserie)}`;
     show_menu(template);
   };
-  // if (item == 'Sides'){
-    
-  // }
-  // if (item == 'Dessert & Drinks'){
-    
-  // }
+
+  if (item == 'Sandwiches & Wraps'){
+    let template = `
+    <div class="type">
+      <p>Chickwizz</p>
+    </div>
+    ${create_item(menu_items_objects.sandwiches_wraps.chickwizz)} 
+    <div class="type">
+      <p>Burger</p>
+    </div>
+    ${create_item(menu_items_objects.sandwiches_wraps.burger)}
+    <div class="type">
+      <p>Wrap</p>
+    </div> 
+    ${create_item(menu_items_objects.sandwiches_wraps.wrap)}`;
+    show_menu(template);
+  };
+
 }
 
 function create_item(m_i_o){
