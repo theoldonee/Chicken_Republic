@@ -155,6 +155,7 @@ section {
 }
 
 .dish_name {
+  font-size: small;
   color: #cc0000;
 }
 

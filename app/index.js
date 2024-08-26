@@ -2,7 +2,7 @@ var left_button = document.getElementById("left_button");
 var right_button = document.getElementById("right_button");
 var meal_name = document.getElementsByClassName("meal_name")[0];
 var menu_items_list_index = 0;
-var menu_items_list = ["Meals","Chicken","Sides","Dessert & Drinks", "Sandwiches & Wraps"];
+var menu_items_list = ["Meals","Sandwiches & Wraps","Chicken","Sides","Sweets & Drinks",];
 
 var menu_items_objects = {
   meals: [
@@ -55,27 +55,53 @@ var menu_items_objects = {
     ] 
   },
 
-  sides: [{ name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 }],
-  dessert_drinks: [{ name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 }],
+  sides: [
+    { name: 'Chips M', image: 'sides/Chips.jpg', price: 2300 },
+    { name: 'Chips L', image: 'sides/Chips.jpg', price: 3500 },
+    { name: 'Meat Pie', image: 'sides/MeatPies.jpg', price: 900 },
+    { name: 'Chicken Pie', image: 'sides/ChickenPie.jpg', price: 950 },
+    
+    { name: 'Dodo', image: 'sides/Dodo.jpg', price: 900 },
+    { name: 'Fried Rice', image: 'sides/FriedRice.jpg', price: 1500 },
+    { name: 'Jollof Rice', image: 'sides/JollofRice.jpg', price: 1500 },
+    { name: 'Moi Moi', image: 'sides/MoiMoi.jpg', price: 1100 },
+    { name: 'Coleslaw', image: 'sides/Coleslaw.jpg', price: 900 },
+    { name: 'Pasta Salad', image: 'sides/PastaSalad.jpg', price: 900 },
+    { name: 'Pepper Sauce', image: 'sides/PepperSauce.jpg', price: 450 },
+    { name: 'Rice and Beans', image: 'sides/RiceBeans.jpg', price: 1700 },
+    { name: 'Spicy Yam  M', image: 'sides/Spicy-Yam.jpg', price: 1500 },
+    { name: 'Spicy Yam L', image: 'sides/Spicy-Yam.jpg', price: 2650 },
+    { name: 'Rice With Sauce', image: 'sides/WhiteRiceSauce.png', price: 1500 },
+  ],
+  sweets_drinks: [
+    { name: 'Icecream', image: 'sweets/Icecream.jpg', price: 400 },
+    { name: 'Pet Drink', image: 'sweets/PetDrinks.jpg', price: 800 },
+  ],
   sandwiches_wraps: {
     chickwizz: [
-      { name: 'Regular', image: 'sandwiches&wraps/Chickwhizz.jpg', price: 3200 },
-      { name: 'Double', image: 'sandwiches&wraps/Double-Chickwhizz.jpg', price: 3200 },
-      { name: 'Double Spicy ', image: 'sandwiches&wraps/Double-Spicy-Chickwhizz.png', price: 3200 },
-      { name: 'Double Meal', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 3200 },
-      { name: 'Double Spicy Meal', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 3200 },
-      { name: 'Spicy Meal', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 3200 },
-      { name: 'Spicy', image: 'sandwiches&wraps/Spicy-Chickwhizz.jpg', price: 3200 },
+      { name: 'Regular', image: 'sandwiches&wraps/Chickwhizz.jpg', price: 2600 },
+      { name: 'Regular Meal M', image: 'sandwiches&wraps/Meal-Chickwhizz.jpg', price: 5000 },
+      { name: 'Regular Meal L', image: 'sandwiches&wraps/Meal-Chickwhizz.jpg', price: 5500 },
+      { name: 'Double', image: 'sandwiches&wraps/Double-Chickwhizz.jpg', price: 3100 },
+      { name: 'Double Spicy ', image: 'sandwiches&wraps/Double-Spicy-Chickwhizz.png', price: 3100 },
+      { name: 'Double Meal M', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 5500 },
+      { name: 'Double Meal L', image: 'sandwiches&wraps/Meal-Double-Chickwhizz.jpg', price: 6000 },
+      { name: 'Double Spicy Meal M', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 5500 },
+      { name: 'Double Spicy Meal L', image: 'sandwiches&wraps/Meal-Double-Spicy-Chickwhizz.png', price: 6000 },
+      { name: 'Spicy Meal M', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 5000 },
+      { name: 'Spicy Meal L', image: 'sandwiches&wraps/Meal-Spicy-Chickwhizz.jpg', price: 5500 },
+      { name: 'Spicy', image: 'sandwiches&wraps/Spicy-Chickwhizz.jpg', price: 2600 },
       
     ],
     burger: [
-      { name: 'Chef Burger', image: 'sandwiches&wraps/ChefBurger.jpg', price: 3200 },
-      { name: 'Chef Burger Meal', image: 'sandwiches&wraps/Meal-ChefBurger.jpg', price: 3200 },
-      { name: 'Big Boyz Meal', image: 'sandwiches&wraps/Meal-BigBoyz.jpg', price: 3200 },
+      { name: 'Chef Burger', image: 'sandwiches&wraps/ChefBurger.jpg', price: 4100 },
+      { name: 'Chef Burger Meal M', image: 'sandwiches&wraps/Meal-ChefBurger.jpg', price: 5000 },
+      { name: 'Chef Burger Meal L', image: 'sandwiches&wraps/Meal-ChefBurger.jpg', price: 7000 },
+      { name: 'Big Boyz Meal', image: 'sandwiches&wraps/Meal-BigBoyz.jpg', price: 6900 },
     ],
     wrap: [
-      { name: 'Meal Wrapstar', image: 'sandwiches&wraps/Meal-Wrapstar.jpg', price: 3200 },
-      { name: 'Wrapstar', image: 'sandwiches&wraps/Wrapstar.jpg', price: 3200 },
+      { name: 'Meal Wrapstar', image: 'sandwiches&wraps/Meal-Wrapstar.jpg', price: 5700 },
+      { name: 'Wrapstar', image: 'sandwiches&wraps/Wrapstar.jpg', price: 3500 },
     ],
     // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
     // { name: 'Dodo Max', image: 'Meal-Dodo-Max.jpg', price: 3200 },
@@ -83,6 +109,10 @@ var menu_items_objects = {
 };
 
 // alert(`src="images/${menu_items_objects.meals[0].image}.jpg"`);
+function on_load(){
+  let template = create_item(menu_items_objects.meals);
+    show_menu(template);
+}
 
 meal_name.addEventListener("click", () => {
   // alert("Here");
@@ -116,7 +146,6 @@ function check_menu_item(item){
   // alert("in check");
   if (item == 'Meals'){
     let template = create_item(menu_items_objects.meals);
-    // alert(template);
     show_menu(template);
   };
 
@@ -154,6 +183,17 @@ function check_menu_item(item){
     show_menu(template);
   };
 
+  if (item == 'Sides'){
+    let template = create_item(menu_items_objects.sides);
+    show_menu(template);
+  };
+
+  
+  if (item == 'Sweets & Drinks'){
+    let template = create_item(menu_items_objects.sweets_drinks);
+    show_menu(template);
+  };
+
 }
 
 function create_item(m_i_o){
@@ -180,3 +220,5 @@ function create_item(m_i_o){
   };
   return content;
 }
+
+on_load();
