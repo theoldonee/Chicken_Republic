@@ -3,6 +3,9 @@ var right_button = document.getElementById("right_button");
 var meal_name = document.getElementsByClassName("meal_name")[0];
 var menu_items_list_index = 0;
 var menu_items_list = ["Meals","Sandwiches & Wraps","Chicken","Sides","Sweets & Drinks",];
+var cart_count_element = document.getElementById("count");
+var cart_count = 0;
+var cart = [];
 
 var menu_items_objects = {
   meals: [
@@ -110,6 +113,7 @@ var menu_items_objects = {
 function on_load(){
   let template = create_item(menu_items_objects.meals);
     show_menu(template);
+    cart_count_element.innerHTML = cart_count;
 }
 
 meal_name.addEventListener("click", () => {
@@ -208,13 +212,24 @@ function create_item(m_i_o){
                   <p class="dish_price">N${m_i_o[i].price}</p>
                 </div>
                 <div class="item_button">
-                  <button>Order</button>
+                  <button onclick="add_to_cart(${m_i_o[i]})">Order</button>
                 </div>
             </div>
       `;
     content += item;
   };
   return content;
+}
+
+function increase(){
+  // alert("here");
+  cart_count += 1;
+  cart_count_element.innerHTML = cart_count;
+}
+
+// function to add item to cart
+function add_to_cart(order_item){
+  increase();
 }
 
 on_load();
