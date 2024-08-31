@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* border: 1px solid black; */
 }
 
 ul {
@@ -47,6 +48,37 @@ section {
   width: 100%;
   object-fit: cover;
 }
+
+.bucket{
+  position: relative;
+  width: 0px;
+  top: -10px;
+  left: -10px;
+  rotate: 40deg;
+}
+
+.bucket_svg {
+  /* position: top; */
+  width: 40px;
+  
+}
+
+.bucket_count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #cc0000;
+  top: 0px;
+  left: 30px;
+  border: none;
+  border-radius: 100%;
+  width: 20px;
+  
+}
+
+
 
 .meal_name_container {
   display: flex;
