@@ -111,7 +111,7 @@ var menu_items_objects = {
 
 // alert(`src="images/${menu_items_objects.meals[0].image}.jpg"`);
 function on_load(){
-  let template = create_item(menu_items_objects.meals);
+  let template = create_item(menu_items_objects.meals, "M");
     show_menu(template);
     cart_count_element.innerHTML = cart_count;
 }
@@ -145,7 +145,7 @@ right_button.addEventListener("click", () => {
 function check_menu_item(item){
   // alert("in check");
   if (item == 'Meals'){
-    let template = create_item(menu_items_objects.meals);
+    let template = create_item(menu_items_objects.meals, "M");
     show_menu(template);
   };
 
@@ -154,15 +154,15 @@ function check_menu_item(item){
     <div class="type">
       <p>Fried</p>
     </div>
-    ${create_item(menu_items_objects.chicken.fried)} 
+    ${create_item(menu_items_objects.chicken.fried, "F")} 
     <div class="type">
       <p>Grilled</p>
     </div>
-    ${create_item(menu_items_objects.chicken.grilled)}
+    ${create_item(menu_items_objects.chicken.grilled, "G")}
     <div class="type">
       <p>Rotisserie</p>
     </div> 
-    ${create_item(menu_items_objects.chicken.rotisserie)}`;
+    ${create_item(menu_items_objects.chicken.rotisserie, "R")}`;
     show_menu(template);
   };
 
@@ -171,38 +171,41 @@ function check_menu_item(item){
     <div class="type">
       <p>Chickwizz</p>
     </div>
-    ${create_item(menu_items_objects.sandwiches_wraps.chickwizz)} 
+    ${create_item(menu_items_objects.sandwiches_wraps.chickwizz, "C")} 
     <div class="type">
       <p>Burger</p>
     </div>
-    ${create_item(menu_items_objects.sandwiches_wraps.burger)}
+    ${create_item(menu_items_objects.sandwiches_wraps.burger, "B")}
     <div class="type">
       <p>Wrap</p>
     </div> 
-    ${create_item(menu_items_objects.sandwiches_wraps.wrap)}`;
+    ${create_item(menu_items_objects.sandwiches_wraps.wrap, "W")}`;
     show_menu(template);
   };
 
   if (item == 'Sides'){
-    let template = create_item(menu_items_objects.sides);
+    let template = create_item(menu_items_objects.sides, "S");
     show_menu(template);
   };
 
   
   if (item == 'Sweets & Drinks'){
-    let template = create_item(menu_items_objects.sweets_drinks);
+    let template = create_item(menu_items_objects.sweets_drinks, "SD");
     show_menu(template);
   };
 
 }
 
-function create_item(m_i_o){
+// A FUNCTION TO CREATE ITEM ELEMENTS
+function create_item(m_i_o, item_type){
   var content = '';
   for (let i = 0; i < m_i_o.length; i++){
+    m_i_o[i].id = `${m_i_o[i].name}_${item_type}`;
     var item = `
             <div class="item">
                 <div class="item_img">
                   <img
+                    class="lazyload"
                     src="images/${m_i_o[i].image}"
                     alt="${m_i_o[i].name}"
                   />
@@ -212,7 +215,7 @@ function create_item(m_i_o){
                   <p class="dish_price">N${m_i_o[i].price}</p>
                 </div>
                 <div class="item_button">
-                  <button onclick="add_to_cart(${m_i_o[i]})">Order</button>
+                  <button onclick="add_to_cart('${m_i_o[i]}')">Order</button>
                 </div>
             </div>
       `;
@@ -221,14 +224,17 @@ function create_item(m_i_o){
   return content;
 }
 
+// A FUNCTION TO INCREASE THE VALUE OF THE COUNTER
 function increase(){
   // alert("here");
   cart_count += 1;
   cart_count_element.innerHTML = cart_count;
 }
 
-// function to add item to cart
+// A FUNCTION TO ADD ITEMS TO CART
 function add_to_cart(order_item){
+  // alert(order_item); 
+  var item = order_item;
   increase();
 }
 
